@@ -22,6 +22,10 @@ public class MapController : MonoBehaviour
     [Space]
     [SerializeField] private GameObject[] Surrounding;
     [SerializeField] private int[] Surrounding_spawnChances;
+    [Space]
+    [SerializeField] private Transform ObstaclesContainer;
+    [SerializeField] private Transform SurroundingContainer;
+    [SerializeField] private Transform RoadContainer;
 
     private bool _lastSurroundingWasNotDouble = false;
 
@@ -61,6 +65,7 @@ public class MapController : MonoBehaviour
             float coord_y = mapStartCoordinates.y + roadTyles_difference_y * i;
             newTyle.transform.position = new Vector2(mapStartCoordinates.x, coord_y);
             newTyle.GetComponent<Tyle_Initializator>().InitializateSetting(new Vector2(0, coord_y));
+            newTyle.transform.parent = RoadContainer;
 
             //obstacles check
             if(i == (obstacles_opacity - 1) * obstacles_opacity_multiplier)
@@ -136,6 +141,7 @@ public class MapController : MonoBehaviour
     {
         GameObject newSurrounding = Instantiate(surroundingElement);
         newSurrounding.transform.position = new Vector2(mapStartCoordinates.x + difference_x, coord_y + 1);
+        newSurrounding.transform.parent = SurroundingContainer;
     }
 
     /// <summary>
@@ -236,6 +242,7 @@ public class MapController : MonoBehaviour
             GameObject newObstacle = Instantiate(Obstacles[Random.Range(0, Obstacles.Length)]);
             coords_y = Random.Range(coords_y - roadTyles_difference_y / 2, coords_y + roadTyles_difference_y / 2);
             newObstacle.transform.position = new Vector2(coord, coords_y);
+            newObstacle.transform.parent = ObstaclesContainer;
         }
     }
 }
