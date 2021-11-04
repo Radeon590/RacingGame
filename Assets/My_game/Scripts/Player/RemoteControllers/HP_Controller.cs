@@ -33,6 +33,7 @@ public class HP_Controller : MonoBehaviour
     {
         PlayerCar.GetComponent<CarController>().canMove = false;
         PlayerCar.GetComponent<DamageController>().enabled = false;
+        Destroy(PlayerCar);
         DeathNotification.SetActive(true);
     }
 
