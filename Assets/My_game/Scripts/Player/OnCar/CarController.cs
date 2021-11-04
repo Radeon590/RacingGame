@@ -40,7 +40,7 @@ public class CarController : MonoBehaviour
 
         if (speed_y > 0)
         {
-            speed_y -= frictionForce + Time.deltaTime;
+            speed_y -= frictionForce * Time.deltaTime;
             speedMultiplier += Time.deltaTime * timeMultiplier;
         }
         else
@@ -48,7 +48,6 @@ public class CarController : MonoBehaviour
             //movement_x = 0;
             speed_y = 0;
         }
-            
 
         Vector2 movementVector = new Vector2(movement_x * speed_x * speed_y, speed_y);
         transform.Translate(movementVector * Time.deltaTime * speedMultiplier);

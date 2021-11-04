@@ -31,11 +31,6 @@ public class MapController : MonoBehaviour
 
     private delegate bool SurroundingSpawnCondition(GameObject element);
 
-    private void Start()
-    {
-        GenerateMap(RoadTypes.miami);
-    }
-
     /// <summary>
     /// function of map generation
     /// </summary>

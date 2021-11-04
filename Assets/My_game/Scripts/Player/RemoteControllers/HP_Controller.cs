@@ -11,7 +11,7 @@ public class HP_Controller : MonoBehaviour
     [SerializeField] private GameObject[] hearts;
     [SerializeField]
 
-    private int hp = 2;
+    private int hp = -1;
 
     public void Initializate_HP()
     {
