@@ -280,13 +280,12 @@ MonoBehaviour:
   - 0.9
   - 2.4
   Surrounding:
-  - {fileID: 349460006607898815, guid: 8b12fce4dd830344aafde130ad1dce70, type: 3}
   - {fileID: 3039408818886792340, guid: ad94e5e722e26bd4796d39a2a328a643, type: 3}
   - {fileID: 3510706309774956042, guid: aeaee19fc2bcc7344a3db9a1a5dc86fb, type: 3}
   - {fileID: 4578023006345249858, guid: d5b7cfacccf085041ad50ec5b39614c1, type: 3}
   - {fileID: 4054164280715857592, guid: 98727d0df1311b4439153f0dd20cd70e, type: 3}
   - {fileID: 6206792269293996993, guid: 9728025d20992cf44b2b03215a52d564, type: 3}
-  Surrounding_spawnChances: 040000000400000006000000030000000600000005000000
+  Surrounding_spawnChances: 0400000006000000030000000400000005000000
   ObstaclesContainer: {fileID: 641581736}
   SurroundingContainer: {fileID: 1192997010}
   RoadContainer: {fileID: 98756729}
@@ -340,7 +339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &228279865
 RectTransform:
   m_ObjectHideFlags: 0
@@ -972,7 +971,7 @@ Camera:
   far clip plane: 1000
   field of view: 80.7
   orthographic: 1
-  orthographic size: 3.181728
+  orthographic size: 2.6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1293,7 +1292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1424782124
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1777,7 +1776,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2094634603
 RectTransform:
   m_ObjectHideFlags: 0
