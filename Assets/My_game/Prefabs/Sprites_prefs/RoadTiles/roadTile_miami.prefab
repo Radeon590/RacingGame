@@ -96,7 +96,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ElementsForThisSetting:
-  - {fileID: 6897826716467999787, guid: 458e460ad76325b45b50c15076518a0b, type: 3}
   - {fileID: 1538747341119952289, guid: 70c4ceab2c5030a48a0b36266bd424e2, type: 3}
   - {fileID: 4589343778951354630, guid: edb23537b761ddf42a68342b14d2127e, type: 3}
   - {fileID: 1597181724086904065, guid: f270d2bfd6b244143bbda165274f6630, type: 3}
