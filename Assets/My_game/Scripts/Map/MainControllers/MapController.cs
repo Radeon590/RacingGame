@@ -223,7 +223,7 @@ public class MapController : MonoBehaviour
     /// <param name="obstSpawn_chance">chances to spawn obst = 1/(this number - 1)</param>
     private void SpawnObstacles(float coords_y, int obstSpawn_chance)
     {
-        //randomize is it needed to spran obstacles
+        //randomize is it needed to span obstacles
         if(Random.Range(0, obstSpawn_chance) != 0)
         {
             return;

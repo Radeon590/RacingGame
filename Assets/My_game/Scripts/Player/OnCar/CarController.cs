@@ -7,14 +7,14 @@ public class CarController : MonoBehaviour
     [HideInInspector] public MobileInputController MobileInputController;
     //
     float speedMultiplier = 1;
-    float timeMultiplier = 0.1f;
+    float timeMultiplier = 0.05f;
     //float timer = 0;
 
-    float maxSpeed_y = 5;
-    float accelerationMultiplier = 10f;
+    float maxSpeed_y = 2.5f;
+    float accelerationMultiplier = 5f;
 
-    float speed_y = 0;
-    float speed_x = 0.1f;
+    float speed_y = 0.01f;
+    float speed_x = 2f;
 
     float frictionForce = 0.1f;
 
@@ -54,7 +54,7 @@ public class CarController : MonoBehaviour
             speed_y = 0;
         }
 
-        Vector2 movementVector = new Vector2(movement_x * speed_x * speed_y, speed_y);
+        Vector2 movementVector = new Vector2(movement_x * speed_x, speed_y);
         transform.Translate(movementVector * Time.deltaTime * speedMultiplier);
     }
 }
