@@ -15,7 +15,8 @@ public class MenuController : MonoBehaviour
     {
         set
         {
-            gameController.CarSprite = value;
+            //TODO: пока что заменено на простой рандом
+            //gameController.CarSprite = value;
         }
     }
 

@@ -16,6 +16,7 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         //y controlling
+        if(carController)
         if(carController.transform.position.y > transform.position.y - differnece_y)
         {
             if (!crashed)
@@ -31,6 +32,7 @@ public class CameraController : MonoBehaviour
         }
 
         //x border
+        if(carController)
         if(carController.transform.position.x > transform.position.x + difference_x
             || carController.transform.position.x < transform.position.x - difference_x)
         {

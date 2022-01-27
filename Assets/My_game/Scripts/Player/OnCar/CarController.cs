@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
+    [HideInInspector] public MobileInputController MobileInputController;
+    //
     float speedMultiplier = 1;
     float timeMultiplier = 0.1f;
     //float timer = 0;
@@ -33,10 +35,13 @@ public class CarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float movement_x = Input.GetAxis("Horizontal");
+        //TODO:changes for different platforms
+        //float movement_x = Input.GetAxis("Horizontal");
+        //
+        float movement_x = MobileInputController.XInput;
 
         if (speed_y <= maxSpeed_y && canMove)
-            speed_y += Input.GetAxis("Vertical") * Time.deltaTime * accelerationMultiplier;
+            speed_y += /*Input.GetAxis("Vertical")*/ 0.5f * Time.deltaTime * accelerationMultiplier;
 
         if (speed_y > 0)
         {

@@ -28,6 +28,7 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 1
+      enableAlphaDilation: 0
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
@@ -153,7 +154,7 @@ SpriteAtlas:
   - car3
   - car5
   - car1
-  - Miami
+  - miami
   - 3_2
   - money3
   - sign

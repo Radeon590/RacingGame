@@ -12,7 +12,8 @@ public class MapController : MonoBehaviour
 {
     [SerializeField] private float surrounding_difference_x = 4.36f;
     [SerializeField] private float roadTyles_difference_y = 3.2f;
-    [SerializeField] private Vector2 mapStartCoordinates;
+    public Vector2 mapStartCoordinates_defaultValue;
+    [HideInInspector] public Vector2 mapStartCoordinates;
     [Space]
     [SerializeField] private GameObject[] RoadTyles_Miami;
     [SerializeField] private GameObject[] RoadTyles_Street;
@@ -31,13 +32,28 @@ public class MapController : MonoBehaviour
 
     private delegate bool SurroundingSpawnCondition(GameObject element);
 
+    public void ClearMap()
+    {
+        DeleteChilds(ObstaclesContainer);
+        DeleteChilds(SurroundingContainer);
+        DeleteChilds(RoadContainer);
+    }
+
+    private void DeleteChilds(Transform container)
+    {
+        for (int i = 0; i < container.childCount; i++)
+        {
+            Destroy(container.GetChild(i).gameObject);
+        }
+    }
+    
     /// <summary>
-    /// function of map generation
+    /// function of map generation. returns vector of map end
     /// </summary>
     /// <param name="roadType">location type</param>
     /// <param name="length">roadTyles number</param>
     /// <param name="obstacles_opacity">roadTyles per obstacle</param>
-    public void GenerateMap(RoadTypes roadType, int length = 50, int obstacles_opacity = 3)
+    public Vector2 GenerateMap(RoadTypes roadType,int length = 50, int obstacles_opacity = 3)
     {
         GameObject[] roadTyles = null;
         int obstacles_opacity_multiplier = 1;
@@ -72,6 +88,8 @@ public class MapController : MonoBehaviour
             //surrounding spawn
             SpawnSurrounding(coord_y);
         }
+        //
+        return new Vector2(mapStartCoordinates.x, mapStartCoordinates.y + roadTyles_difference_y * length);
     }
 
     #region Surrounding
