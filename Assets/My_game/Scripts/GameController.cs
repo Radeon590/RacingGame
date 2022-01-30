@@ -11,11 +11,15 @@ public class GameController : MonoBehaviour
     [Space]
     [SerializeField] private HP_Controller hp_controller;
     [SerializeField] private CameraController cameraController;
+    [SerializeField] private PlayerScore playerScore;
+    [Space]
     [SerializeField] private MobileInputController mobileInputController;
     [Space]
     [SerializeField] private MapController mapController;
     [Space]
     public Sprite[] CarSprites;
+    //
+    [HideInInspector] public bool Death = false;
     //
     private Vector2 nextMapStartCoordinates;
     private Transform playerTransform;
@@ -40,12 +44,15 @@ public class GameController : MonoBehaviour
         hp_controller.PlayerCar = newPlayer;
         cameraController.enabled = true;
         cameraController.carController = newPlayer.GetComponent<CarController>();
+        //
+        playerScore.StartScoreRecording();
     }
 
     public void RestartGame()
     {
         cameraController.transform.position = new Vector3(0, 0, -10);
         mapController.ClearMap();
+        Death = false;
         if(playerTransform)
             Destroy(playerTransform.gameObject);
     }

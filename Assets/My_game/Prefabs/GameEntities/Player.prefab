@@ -371,6 +371,7 @@ GameObject:
   - component: {fileID: 4123279686806417430}
   - component: {fileID: 4123279686806417416}
   - component: {fileID: 4123279686806417428}
+  - component: {fileID: -5237445051090908869}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -527,6 +528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MobileInputController: {fileID: 0}
+  maxSpeed_y: 2.5
   canMove: 1
 --- !u!114 &4123279686806417428
 MonoBehaviour:
@@ -548,3 +550,27 @@ MonoBehaviour:
   animtor: {fileID: 4123279686806417430}
   hp_controller: {fileID: 0}
   cameraController: {fileID: 0}
+--- !u!114 &-5237445051090908869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5801368780517476942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce5c9e65316134db6bca301eae7bdc2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed_y_values:
+  - 1
+  - 1.5
+  - 2
+  - 2.5
+  - 3
+  maxSpeed_y_StartTime:
+  - 0
+  - 30
+  - 75
+  - 135
+  - 210

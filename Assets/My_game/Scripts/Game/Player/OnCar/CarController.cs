@@ -10,7 +10,7 @@ public class CarController : MonoBehaviour
     float timeMultiplier = 0.05f;
     //float timer = 0;
 
-    float maxSpeed_y = 2.5f;
+    public float maxSpeed_y = 1f;
     float accelerationMultiplier = 5f;
 
     float speed_y = 0.01f;
