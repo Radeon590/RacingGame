@@ -564,13 +564,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed_y_values:
   - 1
+  - 1.25
   - 1.5
+  - 1.75
   - 2
+  - 2.25
   - 2.5
-  - 3
   maxSpeed_y_StartTime:
   - 0
-  - 30
-  - 75
-  - 135
-  - 210
+  - 10
+  - 60
+  - 160
+  - 310
+  - 510
+  - 760

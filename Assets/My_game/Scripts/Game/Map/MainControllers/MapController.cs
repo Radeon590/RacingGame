@@ -27,6 +27,8 @@ public class MapController : MonoBehaviour
     [SerializeField] private Transform ObstaclesContainer;
     [SerializeField] private Transform SurroundingContainer;
     [SerializeField] private Transform RoadContainer;
+    //
+    [HideInInspector] public int obstaclesSpawnChance = 3;
 
     private bool _lastSurroundingWasNotDouble = false;
 
@@ -53,7 +55,7 @@ public class MapController : MonoBehaviour
     /// <param name="roadType">location type</param>
     /// <param name="length">roadTyles number</param>
     /// <param name="obstacles_opacity">roadTyles per obstacle</param>
-    public Vector2 GenerateMap(RoadTypes roadType,int length = 50, int obstacles_opacity = 3)
+    public Vector2 GenerateMap(RoadTypes roadType,int length = 50, int obstacles_opacity = 2)
     {
         GameObject[] roadTyles = null;
         int obstacles_opacity_multiplier = 1;
@@ -81,7 +83,7 @@ public class MapController : MonoBehaviour
             //obstacles check
             if(i == (obstacles_opacity - 1) * obstacles_opacity_multiplier)
             {
-                SpawnObstacles(coord_y, 3);
+                SpawnObstacles(coord_y, obstaclesSpawnChance);
                 obstacles_opacity_multiplier++;
             }
 
@@ -229,9 +231,33 @@ public class MapController : MonoBehaviour
             return;
         }
 
-        int obstaclesNumber = Random.Range(0, obstacleCoords_x.Length);
+        //will this obstacles be hard or not
+        int obstaclesNumber;
+        if (GetRandomBoolean())
+        {
+            obstaclesNumber = Random.Range(obstacleCoords_x.Length / 2, obstacleCoords_x.Length - 2);
+        }
+        else
+        {
+            obstaclesNumber = Random.Range(0, obstacleCoords_x.Length - 2);
+        }
         List<float> coordinates = new List<float>();
         List<float> coordinates_sorted = new List<float>();
+        
+        //randomize coordinates without obstacles
+        /*List<int> coordinatesWithout = new List<int>();
+        for (int i = 0; i < coordinatesWithoutObstacles_perTile; i++)
+        {
+            int newCoord = Random.Range(0, obstacleCoords_x.Length);
+            if (coordinatesWithout.Contains(newCoord))
+            {
+                i--;
+            }
+            else
+            {
+                coordinatesWithout.Add(newCoord);
+            }
+        }*/
 
         //add coords to dummy List
         foreach(var j in obstacleCoords_x)
@@ -257,5 +283,15 @@ public class MapController : MonoBehaviour
             newObstacle.transform.position = new Vector2(coord, coords_y);
             newObstacle.transform.parent = ObstaclesContainer;
         }
+    }
+
+    private bool GetRandomBoolean()
+    {
+        if (Random.Range(0, 2) == 1)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
