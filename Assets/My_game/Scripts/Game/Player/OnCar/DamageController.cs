@@ -12,6 +12,8 @@ public class DamageController : MonoBehaviour
     [SerializeField] private CarController carController;
     [SerializeField] private ObstaclesTrigger obstaclesTrigger;
     [SerializeField] private Animator animtor;
+    [Space] 
+    [SerializeField] private GameObject explosionObjectPref;
     [Space]
     public HP_Controller hp_controller;
     public CameraController cameraController;
@@ -28,10 +30,16 @@ public class DamageController : MonoBehaviour
 
     public void GetDamage()
     {
+        StartCoroutine(GettingDamage());
+    }
+
+    private IEnumerator GettingDamage()
+    {
+        //explosion visualizing
+        Instantiate(explosionObjectPref).transform.position = transform.position;
         //set vars (on)
         crashed = true;
         this.GetComponent<Collider2D>().enabled = false;
-        cameraController.crashed = true;
         carController.Speed_y = 0;
         obstaclesTrigger.gameObject.SetActive(true);
         //start functions
@@ -45,6 +53,9 @@ public class DamageController : MonoBehaviour
         //set vars (off)
         obstaclesTrigger.gameObject.SetActive(false);
         crashed = false;
+        //need to see explosion. so make a little delay
+        yield return new WaitForSeconds(0.2f);
+        cameraController.crashed = true;
     }
 
     IEnumerator CarBlindingCooldown()

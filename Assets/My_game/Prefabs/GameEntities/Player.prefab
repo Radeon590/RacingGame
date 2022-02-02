@@ -548,6 +548,7 @@ MonoBehaviour:
   carController: {fileID: 4123279686806417416}
   obstaclesTrigger: {fileID: 4123279686550238411}
   animtor: {fileID: 4123279686806417430}
+  explosionObjectPref: {fileID: 2844900396248724376, guid: 30b4b54c6e1d548929e2d66d9bf07549, type: 3}
   hp_controller: {fileID: 0}
   cameraController: {fileID: 0}
 --- !u!114 &-5237445051090908869

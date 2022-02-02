@@ -276,7 +276,6 @@ MonoBehaviour:
   - {fileID: 7822629344146147973, guid: 4058b40d685953748aa7c7fa0aac7f09, type: 3}
   Obstacles:
   - {fileID: 6206792269293996993, guid: 18192f0e392ee3a4aa57715d02789a60, type: 3}
-  - {fileID: 4054164280715857592, guid: 142548102beb9714c8347c013b855e1c, type: 3}
   - {fileID: 4578023006345249858, guid: a36e58177b4993e45a539f60f88337e2, type: 3}
   obstacleCoords_x:
   - -2.4
